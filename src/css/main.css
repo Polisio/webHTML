@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,600;1,6..12,700&family=Ysabeau+Infant:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center; }
+
+a {
+  text-decoration: none; }
+
+h1 {
+  font-family: "Julius Sans One", sans-serif;
+  text-align: center;
+  color: #2c2c2c;
+  font-size: 1.6em; }
+
+h2 {
+  font-family: "Julius Sans One", sans-serif;
+  text-align: center;
+  color: #bf9b7a;
+  font-size: 1.6em; }
+
+p {
+  font-family: "Nunito Sans", sans-serif;
+  text-align: center;
+  text-justify: auto;
+  font-size: 1em;
+  color: #2c2c2c;
+  padding: 10px; }
+
+menu {
+  --size: 2.5rem;
+  --radius: 6rem;
+  --padding: 1rem;
+  position: fixed;
+  bottom: var(--padding);
+  right: var(--padding);
+  z-index: 1; }
+  menu .action {
+    --factor: 0;
+    width: var(--size);
+    height: var(--size);
+    right: calc(0.35 * var(--size));
+    bottom: calc(0.35 * var(--size));
+    opacity: 0;
+    transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out; }
+    menu .action:hover {
+      color: whitesmoke;
+      box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2); }
+    menu .action:nth-child(1) {
+      --angle: 0deg;
+      transition-delay: 0ms; }
+    menu .action:nth-child(2) {
+      --angle: 30deg;
+      transition-delay: 50ms; }
+    menu .action:nth-child(3) {
+      --angle: 60deg;
+      transition-delay: 100ms; }
+    menu .action:nth-child(4) {
+      --angle: 90deg;
+      transition-delay: 150ms; }
+
+menu > * {
+  font-family: "Nunito Sans", sans-serif;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #bf9b7a;
+  color: #023059;
+  text-decoration: none;
+  box-shadow: 0px 0px 9px 0px #bacbd9; }
+
+menu.open > .action {
+  --factor: 1;
+  opacity: 1; }
+
+menu > .trigger {
+  width: calc(1.6 * var(--size));
+  height: calc(1.6 * var(--size));
+  bottom: 0;
+  right: 0;
+  font-size: 2.5rem;
+  transition: box-shadow 250ms ease-in-out, color 250ms ease-in-out; }
+  menu > .trigger:hover {
+    color: whitesmoke;
+    box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2); }
+  menu > .trigger i {
+    transition: transform 250ms ease-in-out; }
+
+menu.open > .trigger > i {
+  transform: rotate(-135deg); }
+
+section {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #023059;
+  padding-top: 60px; }
+
+footer {
+  position: relative;
+  margin: 0 30px;
+  color: #bacbd9; }
+  footer .top {
+    display: grid;
+    border-bottom: 2px solid #bacbd9; }

@@ -1,0 +1,38 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    margin: auto;
+	align-items: center;
+	justify-content: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: $titulo;
+    text-align: center;
+    color: $textColor;
+    font-size: $textLg;
+}
+
+h2 {
+    font-family: $titulo;
+    text-align: center;
+    color: $beige;
+    font-size:$textLg;
+}
+
+p {
+    font-family: $mainFont;
+    text-align: center;
+    text-justify: auto;
+    font-size: $textMd;
+    color: $textColor;
+    padding: 10px;
+}

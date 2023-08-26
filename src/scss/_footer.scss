@@ -1,0 +1,142 @@
+// Botón flotante
+menu {
+    --size: 2.5rem;
+    --radius: 6rem;
+    --padding: 1rem;
+
+    position: fixed;
+    bottom: var(--padding);
+    right: var(--padding);
+    z-index: 1;
+    .action{
+        --factor: 0;
+
+        width: var(--size);
+        height: var(--size);
+        right: calc(0.35 * var(--size));
+        bottom: calc(0.35 * var(--size));
+    
+        opacity: 0;
+    
+        transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+    
+        transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+        &:hover{
+            // background: $marino;
+            color: $white;
+            box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
+        }
+        &:nth-child(1){
+            --angle: 0deg;
+            transition-delay: 0ms;
+        }
+        &:nth-child(2){
+            --angle: 30deg;
+            transition-delay: 50ms;
+        }
+        &:nth-child(3){
+            --angle: 60deg;
+            transition-delay: 100ms;
+        }
+        &:nth-child(4){
+            --angle: 90deg;
+            transition-delay: 150ms;
+        }
+    }
+}
+
+menu>* {
+    font-family: $mainFont;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: $beige;
+    color: $marino;
+    text-decoration: none;
+    box-shadow: 0px 0px 9px 0px $gris;
+}
+
+// menu>.action {
+//     --factor: 0;
+
+//     width: var(--size);
+//     height: var(--size);
+//     right: calc(0.35 * var(--size));
+//     bottom: calc(0.35 * var(--size));
+
+//     opacity: 0;
+
+//     transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+
+//     transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+//     &:hover{
+//         // background: $marino;
+//         color: $white;
+//         box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
+//     }
+//     &:nth-child(1){
+//         --angle: 0deg;
+//         transition-delay: 0ms;
+//     }
+//     &:nth-child(2){
+//         --angle: 30deg;
+//         transition-delay: 50ms;
+//     }
+//     &:nth-child(3){
+//         --angle: 60deg;
+//         transition-delay: 100ms;
+//     }
+//     &:nth-child(4){
+//         --angle: 90deg;
+//         transition-delay: 150ms;
+//     }
+
+// }
+
+menu.open>.action {
+    --factor: 1;
+    opacity: 1;
+}
+
+menu>.trigger {
+    width: calc(1.6 * var(--size));
+    height: calc(1.6 * var(--size));
+    bottom: 0;
+    right: 0;
+
+    font-size: 2.5rem;
+    transition: box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+    &:hover{
+        color: $white;
+        box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
+    }
+    i{
+        transition: transform 250ms ease-in-out;
+    }
+}
+
+menu.open>.trigger>i {
+    transform: rotate(-135deg);
+}
+
+// Footer
+
+section {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: $marino;
+    padding-top: 60px;
+}
+
+footer {
+    position: relative;
+    margin: 0 30px;
+    color: $gris;
+    .top {
+        display: grid;
+        border-bottom: 2px solid $gris;
+    }
+}
