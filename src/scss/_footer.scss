@@ -1,142 +1,166 @@
-// Botón flotante
-menu {
-    --size: 2.5rem;
-    --radius: 6rem;
-    --padding: 1rem;
 
-    position: fixed;
-    bottom: var(--padding);
-    right: var(--padding);
-    z-index: 1;
-    .action{
-        --factor: 0;
-
-        width: var(--size);
-        height: var(--size);
-        right: calc(0.35 * var(--size));
-        bottom: calc(0.35 * var(--size));
-    
-        opacity: 0;
-    
-        transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
-    
-        transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
-        &:hover{
-            // background: $marino;
-            color: $white;
-            box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
-        }
-        &:nth-child(1){
-            --angle: 0deg;
-            transition-delay: 0ms;
-        }
-        &:nth-child(2){
-            --angle: 30deg;
-            transition-delay: 50ms;
-        }
-        &:nth-child(3){
-            --angle: 60deg;
-            transition-delay: 100ms;
-        }
-        &:nth-child(4){
-            --angle: 90deg;
-            transition-delay: 150ms;
-        }
-    }
-}
-
-menu>* {
-    font-family: $mainFont;
-    position: absolute;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    background: $beige;
-    color: $marino;
-    text-decoration: none;
-    box-shadow: 0px 0px 9px 0px $gris;
-}
-
-// menu>.action {
-//     --factor: 0;
-
-//     width: var(--size);
-//     height: var(--size);
-//     right: calc(0.35 * var(--size));
-//     bottom: calc(0.35 * var(--size));
-
-//     opacity: 0;
-
-//     transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
-
-//     transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
-//     &:hover{
-//         // background: $marino;
-//         color: $white;
-//         box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
-//     }
-//     &:nth-child(1){
-//         --angle: 0deg;
-//         transition-delay: 0ms;
-//     }
-//     &:nth-child(2){
-//         --angle: 30deg;
-//         transition-delay: 50ms;
-//     }
-//     &:nth-child(3){
-//         --angle: 60deg;
-//         transition-delay: 100ms;
-//     }
-//     &:nth-child(4){
-//         --angle: 90deg;
-//         transition-delay: 150ms;
-//     }
-
-// }
-
-menu.open>.action {
-    --factor: 1;
-    opacity: 1;
-}
-
-menu>.trigger {
-    width: calc(1.6 * var(--size));
-    height: calc(1.6 * var(--size));
-    bottom: 0;
-    right: 0;
-
-    font-size: 2.5rem;
-    transition: box-shadow 250ms ease-in-out, color 250ms ease-in-out;
-    &:hover{
-        color: $white;
-        box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
-    }
-    i{
-        transition: transform 250ms ease-in-out;
-    }
-}
-
-menu.open>.trigger>i {
-    transform: rotate(-135deg);
-}
 
 // Footer
 
-section {
+.footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-left: 15px;
     position: fixed;
-    left: 0;
     bottom: 0;
     width: 100%;
     background: $marino;
-    padding-top: 60px;
+    padding-top: 20px;
+    text-decoration: none;
+}
+.footer__column-row {
+    display: none;
+}
+.footer__column__h3 {
+    text-align: center;
 }
 
-footer {
-    position: relative;
-    margin: 0 30px;
+.colUno .footer__column__p{
+    text-align: justify;
+    text-align-last: left ;
     color: $gris;
-    .top {
-        display: grid;
-        border-bottom: 2px solid $gris;
-    }
 }
+
+.colTres {
+    display: none;
+}
+
+
+
+@media (min-width: $breakpoint-sm) {
+    .footer {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        max-width: none;
+        display: flex;
+        width: 100%;
+    }
+
+    .footer__column {
+        width: 33.33%;
+        max-width: 33.33%;
+        min-width: 33.33%;
+        flex: 1 0 33.33%;
+        .footer__column-row {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    }
+    .colTres{
+        display: block;
+    }
+
+}
+
+// .footer__column-row {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+
+
+// footer.top>img {
+//     height: 50px;
+//     margin: 0 auto 50px;
+// }
+
+// footer {
+//     position: sticky;
+//     bottom: 0;
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     padding-left: 15px;
+//     background: $gris;
+// }
+
+
+
+
+
+
+// .top {
+//     border-bottom: 2px solid $gris;
+//     padding-bottom: 20px;
+// }
+
+// footer.bottom {
+//     align-items: center;
+//     justify-content: space-between;
+//     flex-direction: column-reverse;
+//     gap: 8px;
+//     padding: 20px 0;
+//     text-align: center;
+// }
+
+// footer.top .links {
+//     // display: grid;
+//     grid-template-columns: repeat(1, 1fr);
+//     gap: 30px;
+//     margin-bottom: 30px;
+//     color: $gris;
+// }
+
+// .links-column {
+//     // display: grid;
+//     justify-content: center;
+//     text-align: center;
+//     gap: 10px;
+// }
+
+// footer h2 {
+//     margin: 0 0 10px;
+//     font-size: 12px;
+//     font-weight: 400;
+//     text-transform: uppercase;
+//     letter-spacing: 1px;
+//     color: $white;
+// }
+
+// footer p {
+//     margin: 0;
+//     text-align: center;
+//     color: $gris;
+// }
+
+// .legal>a {
+//     margin: 0 0 0 4px;
+
+// }
+
+// .legal,
+// .copyright {
+//     font-size: 12px;
+//     color: $gris;
+// }
+
+// .legal>span {
+//     margin-right: 10px;
+// }
+
+// footer.top .socials {
+//     position: absolute;
+//     left: 50%;
+//     bottom: 10px;
+//     translate: -50% 0;
+//     display: flex;
+//     align-items: center;
+//     gap: 18px;
+//     height: 56px;
+// }
+
+// footer.top .socials>a {
+//     font-size: 24px;
+// }
