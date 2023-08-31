@@ -8,11 +8,11 @@
 }
 
 .accordion-container {
-    min-width: 240px;
+    min-width: 280px;
     padding: 10px;
-    border-radius: 16px;
+    border-radius: 0;
     overflow: hidden;
-    background-color:$azulDos;
+    background-color:$marino;
 }
 
 .main-item {
@@ -29,8 +29,10 @@
 
 
 .main-item:hover {
-    background-color: $marino;
-    color: $beige;
+    background-color: $azulUno;
+    color: $gris;
+    font-size: $textHover;
+    font-weight: 500;
 }
 
 .main-item svg {
@@ -88,7 +90,7 @@
 }
 
 .accordion-container>ul>li>a {
-    color: var(--item-non-hover);
+    color: $gris;
     padding: 16px 8px;
     height: 38px;
     line-height: 38px;
@@ -105,7 +107,7 @@
 }
 
 .accordion-container>ul>li:hover>a {
-    color: var(--primary-item);
+    color: $textColor;
     background-color: $gris;
     width: 100%;
 }
