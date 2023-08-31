@@ -1,7 +1,8 @@
-html,
+
 body {
     margin: 0;
     height: 100%;
+    box-sizing: border-box;
 }
 
 a {
@@ -96,7 +97,7 @@ menu>* {
     box-shadow: 0px 0px 9px 0px $gris;
 }
 
-menu.open>.action {
+menu.abrir>.action {
     --factor: 1;
     opacity: 1;
 }
@@ -118,6 +119,6 @@ menu>.trigger {
     }
 }
 
-menu.open>.trigger>i {
+menu.abrir>.trigger>i {
     transform: rotate(-135deg);
 }

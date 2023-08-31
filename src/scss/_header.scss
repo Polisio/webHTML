@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 15px;
+    width: 100%;
+    background: $gris;
+    // padding-top: 20px;
+    text-decoration: none;
+}
+
+.section {
+    display: inline-flex;
+    width: 100%;
+}
+
+.imgLogo{
+    width: 25%;
+}
