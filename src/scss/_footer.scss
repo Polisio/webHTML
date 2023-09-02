@@ -1,12 +1,11 @@
-
-
 // Footer
 
 .footer {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
     margin: 0 auto;
     padding: 10px;
     bottom: 0;
@@ -15,49 +14,61 @@
     padding-top: 20px;
     text-decoration: none;
 }
+
+.footer__column {
+    width: 33.33%;
+    max-width: 33.33%;
+    min-width: 33.33%;
+    flex: 1 0 33.33%;
+}
+
 .footer__column-row {
-    display: none;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    // display: none;
 }
 .footer__column__h3 {
     text-align: center;
 }
 
-.colUno .footer__column__p{
-    text-align: justify;
-    text-align-last: left ;
-    color: $gris;
+.colUno{
+    align-items:center;
+    justify-items: center;
+    margin: auto;
 }
 
-.colTres {
-    display: none;
+.colTres{
+    text-align: center;
+    text-align-last: left;
+    p{
+        color: $gris;
+    }
+}
+.colUno .footer__column__p {
+    text-align: justify;
+    text-align-last: center;
+    color: $gris;
 }
 
 
 
 @media (min-width: $breakpoint-sm) {
-    .footer {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        max-width: none;
-        display: flex;
-        width: 100%;
-        bottom: 0;
-    }
+    // .footer {
+        // flex-direction: column;
+        // flex-wrap: wrap;
+        // align-items: center;
+        // justify-content: space-evenly;
+        // margin: 0 auto;
+        // padding: 10px;
+        // bottom: 0;
+        // width: 100%;
+        // background: $marino;
+        // padding-top: 20px;
+        // text-decoration: none;
+    // }
 
-    .footer__column {
-        width: 33.33%;
-        max-width: 33.33%;
-        min-width: 33.33%;
-        flex: 1 0 33.33%;
-        .footer__column-row {
-            display: flex;
-            align-content: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-    }
-    .colTres{
-        display: block;
-    }
-
+    // .colTres {
+    //     display: none;
+    // }
 }

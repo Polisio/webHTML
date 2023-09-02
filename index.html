@@ -20,10 +20,8 @@
 <body>
     <!-- inicia header -->
     <header class="header">
-        <section class="section">
-            <div>
-                <img src="./src/img/logos/Logo_Meta_SinFondo.png" class="imgLogo" alt="Logo"></img>
-            </div>
+        <!-- section first mobile -->
+        <section class="sectionMobileFisrt">
             <div class="containerNav">
                 <nav class="accordion-container">
                     <div class="main-item">
@@ -62,7 +60,46 @@
                     </ul>
                 </nav>
             </div>
+        </section>
+        <div class="inner">
 
+            <!-- Logo -->
+                <h1><a href="index.html" id="logo" class="logoFormat">CasAsesor</a></h1>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current_page_item"><a href="index.html">Home</a></li>
+                        <li>
+                            <a href="#">Dropdown</a>
+                            <ul>
+                                <li><a href="#">Lorem ipsum dolor</a></li>
+                                <li><a href="#">Magna phasellus</a></li>
+                                <li>
+                                    <a href="#">Phasellus consequat</a>
+                                    <ul>
+                                        <li><a href="#">Lorem ipsum dolor</a></li>
+                                        <li><a href="#">Phasellus consequat</a></li>
+                                        <li><a href="#">Magna phasellus</a></li>
+                                        <li><a href="#">Etiam dolore nisl</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Veroeros feugiat</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                        <li><a href="no-sidebar.html">No Sidebar</a></li>
+                    </ul>
+                </nav>
+
+        </div>
+
+        <!-- section breakpointMd -->
+        <section>
+            <!-- <div>
+                <img src="./src/img/logos/Logo_Meta_SinFondo.png" class="imgLogo" alt="Logo"></img>
+            </div> -->
         </section>
 
     </header>
@@ -157,24 +194,25 @@
     
     <footer class="footer">
         <div class="footer__column colUno">
-            <div class="footer__column-row">
-                <img src="src/img/logos/Logo_Meta_SinFondo.png" alt="Logo" width="15%" height="15%" />
-            </div>
-            <div>
-                <h3>Nosotros</h3>
-                <p class="footer__column__p">
-                    Con más de 40 años de experiencia en el sector inmobiliario, somos una empresa familiar que le ofrece una asesoría profesional e íntegra para adquirir o vender su vivienda o generar alguna inversión inmobiliaria.
-                </p>
-            </div>
-        </div>
-        <div class="footer__column colDos">
-            <h3>Aviso legal</h3>
+            <h3>Nosotros</h3>
             <p class="footer__column__p">
-                © Copyright 2023, Example.com
+                Con más de 40 años de experiencia en el sector inmobiliario, somos una empresa familiar que le ofrece una asesoría
+                profesional e íntegra para adquirir o vender su vivienda o generar alguna inversión inmobiliaria.
             </p>
         </div>
+        <div class="footer__column colDos">
+            <div class="footer__column-row">
+                <img src="src/img/logos/Logo_Meta_SinFondo.png" alt="Logo" width="35%" height="35%" />
+            </div>
+        </div>
+
+        <!-- breakpointMd -->
         <div class="footer__column colTres">
-            <h3>Enlaces a redes sociales</h3>
+            <h3>Nuestras redes sociales</h3><br><br>
+            <p class="footer__column__p">
+                © Copyright 2023
+            </p>
+
         </div>
     </footer>
     
@@ -182,11 +220,11 @@
 
     <!-- floating action button -->
     <menu>
-        <a href="#" class="action"><i class="bi bi-whatsapp"></i></a>
-        <a href="#" class="action"><i class="bi bi-telegram"></i></a>
-        <a href="#" class="action"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="action"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="trigger"><i class="bi bi-plus-lg"></i></a>
+        <a href="javascript:void(0)" class="action"><i class="bi bi-whatsapp"></i></a>
+        <a href="javascript:void(0)" class="action"><i class="bi bi-telegram"></i></a>
+        <a href="javascript:void(0)" class="action"><i class="bi bi-facebook"></i></a>
+        <a href="javascript:void(0)" class="action"><i class="bi bi-instagram"></i></a>
+        <a href="javascript:void(0)" class="trigger"><i class="bi bi-plus-lg"></i></a>
     </menu>
     <!-- ends floating action button -->
 
