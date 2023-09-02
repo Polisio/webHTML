@@ -112,8 +112,6 @@ menu.abrir > .trigger > i {
 
 .footer__column {
   width: 33.33%;
-  max-width: 33.33%;
-  min-width: 33.33%;
   flex: 1 0 33.33%; }
 
 .footer__column-row {
@@ -137,5 +135,28 @@ menu.abrir > .trigger > i {
 
 .colUno .footer__column__p {
   text-align: justify;
-  text-align-last: center;
+  text-align-last: left;
   color: #bacbd9; }
+
+@media screen and (max-width: 576px) {
+  .footer {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    bottom: 0;
+    width: 100%;
+    background: #023059;
+    padding-top: 20px;
+    text-decoration: none; }
+  .footer__column {
+    width: 100%;
+    text-align: left; }
+  .h3Style {
+    text-align: left; }
+  .colUno {
+    align-items: center;
+    justify-items: center; }
+  .colDos {
+    display: none; } }

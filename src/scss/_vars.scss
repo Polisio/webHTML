@@ -22,9 +22,19 @@ $textColor: rgb(44, 44, 44);
 $textColorShadow: rgba(102, 100, 100, 0.5);
 $white: rgb(245, 245, 245);
 
-// breakpoints
-$breakpoint-sm: 541px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 992px;
-$breakpoint-xl: 1200px;
-$breakpoint-xxl: 1400px;
+// Define las variables para los breakpoints
+$breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+// Define el mixin para los breakpoints
+@mixin breakpoint($breakpoint) {
+    @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
