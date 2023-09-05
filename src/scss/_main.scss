@@ -1,18 +1,37 @@
-// .mainHome{
-//     display: flex;
-//     width: 100%;
-//     height: 100%;
-//     background-color: $beige;
-// }
 
+
+
+
+.mainGlobal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+}
+
+.sectionMain{
+    height: 50px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.h1Main {
+    font-family: $titulo;
+    font-size: $textLg;
+    font-weight: 700;
+    text-align: center;
+}
+
+.carrusel{
+    padding: 10px;
+    height: 100%;
+    margin: 40px;
+}
 // // Cards
-// .background {
-//     width: 100%;
-//     display: flex;
-//     justify-content: center;
-//     align-items: start;
-//     padding: 80px 32px;
-// }
+
+
 
 // .articles {
 //     display: flex;

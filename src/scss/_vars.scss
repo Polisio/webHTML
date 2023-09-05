@@ -8,14 +8,18 @@ $textAux: 'Ysabeau Infant', sans-serif;
 //sizes
 $textSm: 0.8em;
 $textMd: 1em;
-$textHover: 1.2em;
-$textLg: 1.6em;
+$textHoverMd: 1.2em;
+$textHoverLg: 1.8em;
+$textLg: 2em;
 $textXl: 3em;
 
 // vars colors
 $marino: rgb(2,48,89);
+$marinoShadow: rgba(2,48,89, 0.9);
 $azulUno: rgb(5,91,166);
+$azulUnoShadow: rgba(5,91,166, 0.5);
 $azulDos: rgb(3,103,166);
+$azulDosShadow: rgba(3,103,166, 0.5);
 $gris: rgb(186,203,217);
 $beige: rgb(191,155,122);
 $textColor: rgb(44, 44, 44);

@@ -1,6 +1,7 @@
 // Footer
 
 .footer {
+    position: relative ;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -8,7 +9,7 @@
     justify-content: space-evenly;
     margin: 0 auto;
     padding: 10px;
-    bottom: 0;
+    margin-bottom: 0;
     width: 100%;
     background: $marino;
     padding-top: 20px;
