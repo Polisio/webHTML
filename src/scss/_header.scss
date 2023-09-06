@@ -20,7 +20,7 @@
 .headerGlobal {
     align-items: center;
     justify-content: center;
-    width: 75%;
+    width: 90%;
     border-radius: 10px;
     background: $marino;
     padding: 0.075em;
@@ -75,7 +75,7 @@
             font-weight: 700;
             font-size: $textMd;
             letter-spacing: 0.06em;
-            padding: 0.5em 0.8em 0.5e .8em;
+            padding: 0.5em 0.7em 0.5e 0.7em;
             border-radius: 6px;
             transition: all ease-in-out 0.15s;
             &:hover{
@@ -85,169 +85,4 @@
 
         }
     }
-}
-
-
-
-
-// .imgLogo{
-//     width: 25%;
-// }
-
-// // small
-
-// @media (min-width: $breakpoint-sm){
-//     .header{
-//         position: relative;
-// 		background: $marino;
-// 		padding: 0.75em;
-// 		margin-bottom: 0;
-//     }
-// }
-
-
-// nav
-
-// //navbar first mobile
-
-.containerNav{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: $textMd;
-}
-
-.accordion-container {
-    min-width: 100%;
-    padding: 10px;
-    border-radius: 0;
-    overflow: hidden;
-    background-color:$marino;
-}
-
-.main-item {
-    border-radius: 8px;
-    padding: 12px;
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: start;
-    gap: 8px;
-    transition: all ease-in-out 0.25s;
-    color: $gris;
-}
-
-
-.main-item:hover {
-    background-color: $azulUno;
-    color: $gris;
-    font-size: $textHoverMd;
-    font-weight: 500;
-}
-
-.main-item svg {
-    stroke: $gris;
-    transition: all ease-in-out 0.25s;
-}
-
-.main-item:hover svg {
-    stroke: $gris;
-}
-
-.main-item--open {
-    border-radius: 8px;
-    background-color: $azulUno;
-    transition: all 200ms;
-    color: $gris;
-}
-
-.main-item--open:hover {
-    color: $beige;
-    border-radius: 8px;
-    background-color: $marino;
-}
-
-.main-item--open svg {
-    stroke: var(--primary-item);
-}
-
-.accordion-container>ul {
-    max-height: 0px;
-    list-style-type: none;
-    margin: 0px;
-    padding-left: 14px;
-    opacity: 0;
-    font-size: smaller;
-    visibility: hidden;
-    transition: all ease-in-out 0.2s;
-}
-
-.main-item--open+ul {
-    visibility: visible;
-    max-height: 400px;
-    padding-left: 22px;
-    opacity: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.accordion-container>ul>li {
-    height: 48px;
-    display: flex;
-    width: 100%;
-    align-items: center;
-}
-
-.accordion-container>ul>li>a {
-    color: $gris;
-    padding: 16px 8px;
-    height: 38px;
-    line-height: 38px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    border-radius: 8px;
-}
-
-.accordion-container>ul>li:hover {
-    color: var(--primary-item);
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.accordion-container>ul>li:hover>a {
-    color: $textColor;
-    background-color: $gris;
-    width: 100%;
-}
-
-.expand-icon {
-    width: 24px;
-    height: 24px;
-    margin-left: auto;
-}
-
-.main-item--open>.expand-icon {
-    transform: rotate(-90deg);
-}
-
-.line-vertical {
-    display: block;
-    background-color: $azulUno;
-    width: 2px;
-    height: 48px;
-}
-
-.accordion-container>ul>li:last-child>.line-vertical {
-    height: 25px;
-    align-self: flex-start;
-}
-
-.line-horizontal {
-    display: block;
-    background-color: $azulUno;
-    height: 2px;
-    min-width: 12px;
 }

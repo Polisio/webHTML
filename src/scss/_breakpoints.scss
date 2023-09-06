@@ -67,6 +67,9 @@
     #heaerWrapper{
         display: none;
     }
+
+    //navbar Mobile First
+    
     .sectionMobileFisrt {
         display: inline-flex;
         width: 100%;
@@ -78,7 +81,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: $textMd;
+        font-size: $textHoverMd;
     }
     
     .accordion-container {
@@ -99,12 +102,13 @@
         gap: 8px;
         transition: all ease-in-out 0.25s;
         color: $gris;
+        font-size: $textHoverMd;
     }
     
     
     .main-item:hover {
         background-color: $azulUno;
-        color: $gris;
+        color: $beige;
         font-size: $textHoverMd;
         font-weight: 500;
     }
@@ -120,19 +124,15 @@
     
     .main-item--open {
         border-radius: 8px;
-        background-color: $azulUno;
+        background-color: $marino;
         transition: all 200ms;
-        color: $gris;
+        color: $beige;
     }
     
     .main-item--open:hover {
         color: $beige;
         border-radius: 8px;
         background-color: $marino;
-    }
-    
-    .main-item--open svg {
-        stroke: var(--primary-item);
     }
     
     .accordion-container>ul {
@@ -174,12 +174,6 @@
         border-radius: 8px;
     }
     
-    .accordion-container>ul>li:hover {
-        color: var(--primary-item);
-        cursor: pointer;
-        font-weight: 700;
-    }
-    
     .accordion-container>ul>li:hover>a {
         color: $textColor;
         background-color: $gris;
@@ -192,13 +186,9 @@
         margin-left: auto;
     }
     
-    .main-item--open>.expand-icon {
-        transform: rotate(-90deg);
-    }
-    
     .line-vertical {
         display: block;
-        background-color: $azulUno;
+        background-color: $beige;
         width: 2px;
         height: 48px;
     }
@@ -210,7 +200,7 @@
     
     .line-horizontal {
         display: block;
-        background-color: $azulUno;
+        background-color: $beige;
         height: 2px;
         min-width: 12px;
     }
