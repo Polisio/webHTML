@@ -47,7 +47,7 @@ menu {
     transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
     transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out; }
     menu .action:hover {
-      color: whitesmoke;
+      color: #ebebeb;
       box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2); }
     menu .action:nth-child(1) {
       --angle: 0deg;
@@ -85,7 +85,7 @@ menu > .trigger {
   font-size: 2.5rem;
   transition: box-shadow 250ms ease-in-out, color 250ms ease-in-out; }
   menu > .trigger:hover {
-    color: whitesmoke;
+    color: #ebebeb;
     box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2); }
   menu > .trigger i {
     transition: transform 250ms ease-in-out; }
@@ -101,48 +101,25 @@ menu.abrir > .trigger > i {
   background: #023059; }
 
 .conttainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  width: 1200px;
-  justify-content: space-between; }
-
-@media screen and (max-width: 768px) {
-  .conttainer {
-    width: 100%; }
-  .headerGlobal {
-    border-radius: 10px;
-    background: #023059;
-    padding: 2%;
-    margin-bottom: 0; }
-    .headerGlobal .inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      height: 5.5em;
-      padding: 5px;
-      background-color: #023059;
-      background-color: #bacbd9;
-      border-radius: 8px;
-      box-shadow: inset 0px 0px 0px 4px #bf9b7a, inset 0px 6px 5px 0px #023059;
-      text-shadow: rgba(102, 100, 100, 0.5); }
-    .headerGlobal .logoFormat {
-      font-family: "Ysabeau Infant", sans-serif;
-      font-size: 1.8em;
-      color: #023059;
-      transition: all ease-in-out 0.35s; }
-      .headerGlobal .logoFormat:hover {
-        color: #bf9b7a;
-        font-size: 2em;
-        transition: all ease-out 0.35s; } }
+  width: 100%; }
 
 .headerGlobal {
+  align-items: center;
+  justify-content: center;
+  width: 75%;
   border-radius: 10px;
   background: #023059;
-  padding: 0.75em;
+  padding: 0.075em;
   margin-bottom: 0; }
   .headerGlobal .inner {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    margin: 0 20px;
     height: 5.5em;
     padding: 5px;
     background-color: #023059;
@@ -152,12 +129,12 @@ menu.abrir > .trigger > i {
     text-shadow: rgba(102, 100, 100, 0.5); }
   .headerGlobal .logoFormat {
     font-family: "Ysabeau Infant", sans-serif;
-    font-size: 1.8em;
+    font-size: 1.2em;
     color: #023059;
     transition: all ease-in-out 0.35s; }
     .headerGlobal .logoFormat:hover {
       color: #bf9b7a;
-      font-size: 2em;
+      font-size: 1.4em;
       transition: all ease-out 0.35s; }
 
 #nav {
@@ -166,24 +143,146 @@ menu.abrir > .trigger > i {
   #nav ul {
     display: flex;
     align-items: center;
-    flex-direction: row; }
+    flex-direction: row;
+    margin: auto 0; }
   #nav > ul > li {
     padding: 0 0.8em 0 0.8em; }
     #nav >
-ul > li > .current_page_item {
-      color: #bf9b7a; }
-    #nav > ul > li a {
+ul > li > a {
       color: #023059;
       text-decoration: none;
       text-transform: uppercase;
       font-weight: 700;
       font-size: 1em;
-      letter-spacing: 0.075em;
-      padding: 0.5em 0.8em 0.5e 8em;
+      letter-spacing: 0.06em;
+      padding: 0.5em 0.8em 0.5e .8em;
       border-radius: 6px;
       transition: all ease-in-out 0.15s; }
-      #nav > ul > li a:hover {
-        color: #bf9b7a; }
+      #nav >
+ul > li > a:hover {
+        color: #bf9b7a;
+        transition: all ease-in-out 0.15s; }
+
+.containerNav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em; }
+
+.accordion-container {
+  min-width: 100%;
+  padding: 10px;
+  border-radius: 0;
+  overflow: hidden;
+  background-color: #023059; }
+
+.main-item {
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+  transition: all ease-in-out 0.25s;
+  color: #bacbd9; }
+
+.main-item:hover {
+  background-color: #055ba6;
+  color: #bacbd9;
+  font-size: 1.2em;
+  font-weight: 500; }
+
+.main-item svg {
+  stroke: #bacbd9;
+  transition: all ease-in-out 0.25s; }
+
+.main-item:hover svg {
+  stroke: #bacbd9; }
+
+.main-item--open {
+  border-radius: 8px;
+  background-color: #055ba6;
+  transition: all 200ms;
+  color: #bacbd9; }
+
+.main-item--open:hover {
+  color: #bf9b7a;
+  border-radius: 8px;
+  background-color: #023059; }
+
+.main-item--open svg {
+  stroke: var(--primary-item); }
+
+.accordion-container > ul {
+  max-height: 0px;
+  list-style-type: none;
+  margin: 0px;
+  padding-left: 14px;
+  opacity: 0;
+  font-size: smaller;
+  visibility: hidden;
+  transition: all ease-in-out 0.2s; }
+
+.main-item--open + ul {
+  visibility: visible;
+  max-height: 400px;
+  padding-left: 22px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.accordion-container > ul > li {
+  height: 48px;
+  display: flex;
+  width: 100%;
+  align-items: center; }
+
+.accordion-container > ul > li > a {
+  color: #bacbd9;
+  padding: 16px 8px;
+  height: 38px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 8px; }
+
+.accordion-container > ul > li:hover {
+  color: var(--primary-item);
+  cursor: pointer;
+  font-weight: 700; }
+
+.accordion-container > ul > li:hover > a {
+  color: #2c2c2c;
+  background-color: #bacbd9;
+  width: 100%; }
+
+.expand-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: auto; }
+
+.main-item--open > .expand-icon {
+  transform: rotate(-90deg); }
+
+.line-vertical {
+  display: block;
+  background-color: #055ba6;
+  width: 2px;
+  height: 48px; }
+
+.accordion-container > ul > li:last-child > .line-vertical {
+  height: 25px;
+  align-self: flex-start; }
+
+.line-horizontal {
+  display: block;
+  background-color: #055ba6;
+  height: 2px;
+  min-width: 12px; }
 
 .mainGlobal {
   display: flex;
@@ -192,7 +291,7 @@ ul > li > .current_page_item {
   justify-content: space-evenly;
   width: 100%;
   height: 100%;
-  background-color: whitesmoke; }
+  background-color: #ebebeb; }
 
 .sectionMain {
   height: 50px;
@@ -245,6 +344,8 @@ ul > li > .current_page_item {
 .colTres {
   text-align: center;
   text-align-last: left; }
+  .colTres .h3Style {
+    text-align: left; }
   .colTres p {
     color: #bacbd9; }
 
@@ -253,13 +354,13 @@ ul > li > .current_page_item {
   text-align-last: left;
   color: #bacbd9; }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .footer {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: 20px 0 auto;
     bottom: 0;
     width: 100%;
     background: #023059;
@@ -274,4 +375,148 @@ ul > li > .current_page_item {
     align-items: center;
     justify-items: center; }
   .colDos {
-    display: none; } }
+    display: none; }
+  .colTres {
+    text-align: center;
+    text-align-last: left; } }
+
+@media screen and (max-width: 1200px) {
+  .conttainer {
+    width: 100%; }
+  .headerGlobal {
+    width: 95%; }
+    .headerGlobal .logoFormat {
+      font-family: "Ysabeau Infant", sans-serif;
+      font-size: 1em;
+      color: #023059;
+      transition: all ease-in-out 0.35s; }
+      .headerGlobal .logoFormat:hover {
+        color: #bf9b7a;
+        font-size: 1.2em;
+        transition: all ease-out 0.35s; }
+  #nav {
+    display: flex;
+    align-items: center; }
+    #nav ul {
+      display: flex; }
+    #nav > ul > li {
+      padding: 0 0.1em 0 0.1em; }
+      #nav >
+ul > li > .current_page_item {
+        color: #bf9b7a; }
+      #nav > ul > li a {
+        letter-spacing: 0.02em;
+        padding: 0.1em 0.2em 0.1em 0.2em;
+        transition: all ease-in-out 0.15s; }
+        #nav > ul > li a:hover {
+          color: #bf9b7a;
+          transition: all ease-in-out 0.15s; } }
+
+@media screen and (max-width: 768px) {
+  #heaerWrapper {
+    display: none; }
+  .sectionMobileFisrt {
+    display: inline-flex;
+    width: 100%;
+    display: block; }
+  .containerNav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em; }
+  .accordion-container {
+    min-width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: #023059; }
+  .main-item {
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: start;
+    gap: 8px;
+    transition: all ease-in-out 0.25s;
+    color: #bacbd9; }
+  .main-item:hover {
+    background-color: #055ba6;
+    color: #bacbd9;
+    font-size: 1.2em;
+    font-weight: 500; }
+  .main-item svg {
+    stroke: #bacbd9;
+    transition: all ease-in-out 0.25s; }
+  .main-item:hover svg {
+    stroke: #bacbd9; }
+  .main-item--open {
+    border-radius: 8px;
+    background-color: #055ba6;
+    transition: all 200ms;
+    color: #bacbd9; }
+  .main-item--open:hover {
+    color: #bf9b7a;
+    border-radius: 8px;
+    background-color: #023059; }
+  .main-item--open svg {
+    stroke: var(--primary-item); }
+  .accordion-container > ul {
+    max-height: 0px;
+    list-style-type: none;
+    margin: 0px;
+    padding-left: 14px;
+    opacity: 0;
+    font-size: smaller;
+    visibility: hidden;
+    transition: all ease-in-out 0.2s; }
+  .main-item--open + ul {
+    visibility: visible;
+    max-height: 400px;
+    padding-left: 22px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+  .accordion-container > ul > li {
+    height: 48px;
+    display: flex;
+    width: 100%;
+    align-items: center; }
+  .accordion-container > ul > li > a {
+    color: #bacbd9;
+    padding: 16px 8px;
+    height: 38px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 8px; }
+  .accordion-container > ul > li:hover {
+    color: var(--primary-item);
+    cursor: pointer;
+    font-weight: 700; }
+  .accordion-container > ul > li:hover > a {
+    color: #2c2c2c;
+    background-color: #bacbd9;
+    width: 100%; }
+  .expand-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: auto; }
+  .main-item--open > .expand-icon {
+    transform: rotate(-90deg); }
+  .line-vertical {
+    display: block;
+    background-color: #055ba6;
+    width: 2px;
+    height: 48px; }
+  .accordion-container > ul > li:last-child > .line-vertical {
+    height: 25px;
+    align-self: flex-start; }
+  .line-horizontal {
+    display: block;
+    background-color: #055ba6;
+    height: 2px;
+    min-width: 12px; } }

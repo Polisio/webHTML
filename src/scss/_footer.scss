@@ -40,6 +40,9 @@
 .colTres{
     text-align: center;
     text-align-last: left;
+    .h3Style{
+        text-align: left;
+    }
     p{
         color: $gris;
     }
@@ -52,13 +55,13 @@
 
 
 
-@include breakpoint(sm) {
+@include breakpoint(md) {
     .footer {
         flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        margin: 0 auto;
+        margin: 20px 0 auto;
         bottom: 0;
         width: 100%;
         background: $marino;
@@ -78,5 +81,9 @@
     }
     .colDos {
         display: none;
+    }
+    .colTres {
+        text-align: center;
+        text-align-last: left;
     }
 }
