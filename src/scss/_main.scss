@@ -1,7 +1,6 @@
 
 
 
-
 .mainGlobal{
     display: flex;
     flex-direction: column;
@@ -22,6 +21,7 @@
     font-size: $textLg;
     font-weight: 700;
     text-align: center;
+    margin: 30px 0px 20px 0;
 }
 
 .carrusel{
@@ -93,4 +93,121 @@
 
 .articles article:hover img {
     transform: scale(1.5);
+}
+
+// Cards Galery
+
+.cardGaleria{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    margin: 50px 0 60px 0;
+}
+
+.columnaCard{
+    flex: 20%;
+    max-width: 20%;
+    padding: 0 4px;
+    img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+        filter: grayscale(100%);
+        transition: all .3s ease;
+        &:hover{
+            cursor: pointer;
+            filter: grayscale(0%);
+            box-shadow: 0 0 10px $marinoShadow;
+            transform: scale(1.1);
+        }
+    }
+    .ocultar {
+        display: none ;
+    }
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $textColorShadow;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .7s ease;
+    visibility: hidden;
+    opacity: 0;
+    .slideshow{
+        width: 90%;
+        height: 90%;
+        background: $whiteShadow;
+        color: $marino;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.slideshow img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.btn_cerrar {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 30px;
+    text-align: center;
+    color: $white;
+    background-color: $textColorShadow;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: all .2s ease;
+    &:hover{
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+}
+
+.botones {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: $textColorShadow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $azulUno;
+    &:hover > i {
+        transform: scale(1.1);
+        transition: all .15s ease-in;
+    }
+}
+
+.atras {
+    left: 20px;
+}
+
+.adelante {
+    right: 20px;
+}
+
+.bi{
+    pointer-events: none;
 }

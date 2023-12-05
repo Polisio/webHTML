@@ -205,3 +205,36 @@
         min-width: 12px;
     }
 }
+
+// Oferta inmobiliaria md
+
+@include breakpoint (md) {
+    .columnaCard {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+    .botones {
+        font-size: 45px;
+    }
+
+    .atras {
+        left: 5px;
+    }
+    .adelante {
+        right: 5px;
+    }
+
+    .slideshow img {
+        width: 98%;
+    }
+}
+
+// Oferta inmobiliaria sm
+
+@include breakpoint (sm) {
+    .columnaCard{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
